@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brechó da Navi</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <h1>Brechó da Navi</h1>
+    </div>
+  </header>
+
+  <!-- Chatbot -->
+  <div id="chatbot">
+    <h3>Chat • Brechó da Navi</h3>
+    <input type="text" id="userInput" placeholder="Digite sua pergunta..." />
+    <button onclick="getResponse()">Enviar</button>
+    <p id="response"></p>
+
+    <ul id="frequent-questions">
+      <li onclick="setQuestion('horário de funcionamento')">Horário de funcionamento</li>
+      <li onclick="setQuestion('localização do brechó')">Localização do brechó</li>
+      <li onclick="setQuestion('promoções atuais')">Promoções</li>
+      <li onclick="setQuestion('como comprar')">Como comprar</li>
+      <li onclick="setQuestion('troca e devolução')">Trocas e devoluções</li>
+      <li onclick="setQuestion('contato do brechó')">Contato</li>
+      <li onclick="setQuestion('loja física ou online')">Loja física ou online?</li>
+      <li onclick="setQuestion('formas de pagamento')">Formas de pagamento</li>
+      <li onclick="setQuestion('produtos novos ou usados')">Produtos novos ou usados?</li>
+      <li onclick="setQuestion('qualidade das peças')">Qualidade das peças</li>
+    </ul>
+  </div>
+
+  <nav>
+    <div class="container nav-links">
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="hero">
+      <img src="imagem.png" alt="Logotipo Brechó da Navi" class="logo" />
+      <p class="slogan">Moda sustentável e cheia de estilo</p>
+    </section>
+
+    <section id="produtos">
+      <h2>Produtos</h2>
+      <div class="produtos-grid">
+        <div class="produto-card">
+          <img src="produto1.jpg" alt="Produto 1" />
+          <h3>Nome do Produto</h3>
+          <p>Descrição breve do produto</p>
+        </div>
+        <div class="produto-card">
+          <img src="produto2.jpg" alt="Produto 2" />
+          <h3>Nome do Produto</h3>
+          <p>Descrição breve do produto</p>
+        </div>
+        <div class="produto-card">
+          <img src="produto3.jpg" alt="Produto 3" />
+          <h3>Nome do Produto</h3>
+          <p>Descrição breve do produto</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <h2>Sobre o Brechó</h2>
+      <p>Brechó da Navi oferece peças únicas, sustentáveis e cheias de personalidade.</p>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Email: <a href="mailto:contato@brechodanavi.com">contato@brechodanavi.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Brechó da Navi - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
