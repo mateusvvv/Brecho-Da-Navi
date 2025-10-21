@@ -161,7 +161,7 @@ nav {
 
 .produto-card button:hover,
 .produto-card button:focus {
-  background: #d81e5b;
+  background: #d81b4e;
   box-shadow: 0 14px 38px rgba(216, 30, 91, 0.7);
   outline: none;
 }
@@ -225,18 +225,21 @@ footer {
   letter-spacing: 1.7px;
 }
 
+/* Chatbot */
 #chatbot {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 16px;
+  right: 16px;
   background-color: #fff;
   border: 2px solid #d81e5b;
   border-radius: 20px;
-  width: 250px;
-  padding: 15px;
-  box-shadow: 0 6px 15px rgba(216, 30, 91, 0.2);
+  width: 260px;
+  padding: 14px 16px;
+  box-shadow: 0 6px 15px rgba(216, 30, 91, 0.25);
   z-index: 1000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 #chatbot h3 {
@@ -250,7 +253,7 @@ footer {
 
 #chatbot input {
   width: 100%;
-  padding: 6px 8px;
+  padding: 7px 9px;
   border: 1.5px solid #ccc;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -265,16 +268,17 @@ footer {
 
 #chatbot button {
   width: 100%;
-  padding: 8px;
+  padding: 9px;
   background-color: #d81e5b;
   color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 1px;
   transition: background-color 0.3s;
+  user-select: none;
 }
 
 #chatbot button:hover,
@@ -289,6 +293,8 @@ footer {
   min-height: 30px;
   color: #444;
   font-weight: 600;
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 #chatbot ul {
@@ -308,15 +314,16 @@ footer {
 
 #chatbot ul li:hover {
   color: #d81e5b;
+  outline: none;
 }
 
 /* Responsivo para telas menores */
 @media(max-width: 600px) {
   #chatbot {
     width: 90vw;
-    bottom: 10px;
+    bottom: 12px;
     right: 5%;
-    padding: 12px;
+    padding: 12px 14px;
   }
 
   #chatbot h3 {
@@ -338,8 +345,7 @@ footer {
   }
 }
 
-
-/* Responsividade */
+/* Responsividade geral */
 @media (max-width: 900px) {
   header h1 {
     font-size: 2.6rem;
