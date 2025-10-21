@@ -225,6 +225,7 @@ footer {
   letter-spacing: 1.7px;
 }
 
+/* Chatbot */
 #chatbot {
   position: fixed;
   bottom: 18px;
@@ -242,17 +243,14 @@ footer {
   flex-direction: column;
   transition: width 0.3s ease, max-width 0.3s ease;
 }
-
-/* Título do chatbot */
 #chatbot h3 {
   margin-bottom: 8px;
   color: #d81e5b;
   font-weight: 700;
-  font-size: 1.12rem;
+  font-size: 1.13rem;
   text-align: center;
   letter-spacing: 0.5px;
 }
-
 #chatbot input {
   width: 100%;
   padding: 7px 10px;
@@ -266,7 +264,6 @@ footer {
   border-color: #ff4081;
   outline: none;
 }
-
 #chatbot button {
   width: 100%;
   padding: 9px 0;
@@ -281,13 +278,11 @@ footer {
   transition: background-color 0.3s;
   user-select: none;
 }
-
 #chatbot button:hover,
 #chatbot button:focus {
   background-color: #ff4081;
   outline: none;
 }
-
 #chatbot #response {
   margin-top: 8px;
   font-size: 0.85rem;
@@ -296,31 +291,28 @@ footer {
   font-weight: 600;
   overflow-y: auto;
 }
-
 #chatbot ul {
   list-style: none;
   margin-top: 10px;
   padding: 0;
-  font-size: 0.87rem;
+  font-size: 0.86rem;
   text-align: center;
 }
-
 #chatbot ul li {
   padding: 4px 0;
   color: #555;
   cursor: pointer;
   transition: color 0.2s;
 }
-
 #chatbot ul li:hover {
   color: #d81e5b;
   outline: none;
 }
 
 /* MOBILE: Estilos específicos para celulares */
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   #chatbot {
-    width: 95vw;
+    width: 90vw;
     max-width: 340px;
     left: 50%;
     right: auto;
@@ -331,10 +323,6 @@ footer {
     font-size: 0.97em;
     max-height: 76vh;
     overflow-y: auto;
-    /* Bordas e sombra mais discretas se desejar:
-    border: 2px solid #d81e5b;
-    box-shadow: 0 2px 8px rgba(216,30,91,0.10);
-    */
   }
   #chatbot h3 {
     font-size: 1rem;
@@ -346,42 +334,13 @@ footer {
   }
   #chatbot #response {
     font-size: 0.78rem;
-    min-height: 24px;
+    min-height: 22px;
   }
   #chatbot ul {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
   #chatbot ul li {
-    font-size: 0.8rem;
-  }
-}
-
-
-/* Responsivo para telas menores */
-@media(max-width: 600px) {
-  #chatbot {
-    width: 90vw;
-    bottom: 12px;
-    right: 5%;
-    padding: 12px 14px;
-  }
-
-  #chatbot h3 {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
-  }
-
-  #chatbot input, #chatbot button {
-    font-size: 0.9rem;
-    padding: 7px;
-  }
-
-  #chatbot #response {
-    font-size: 0.8rem;
-  }
-
-  #chatbot ul li {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 }
 
@@ -390,26 +349,16 @@ footer {
   header h1 {
     font-size: 2.6rem;
   }
-
   .nav-links {
     gap: 28px;
     padding: 15px 0;
   }
-
   .produto-card {
     padding: 22px 15px;
   }
-
   #produtos-container,
   .produtos-grid {
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  }
-
-  #chatbot {
-    width: 95vw;
-    right: 5%;
-    bottom: 18px;
-    padding: 22px;
   }
 }
 
@@ -532,13 +481,11 @@ button#nextBtn { right: 18px; }
   user-select: none;
   margin-top: 20px;
 }
-
 .btn-instagram svg {
   width: 28px;
   height: 28px;
   fill: white;
 }
-
 .btn-instagram:hover,
 .btn-instagram:focus {
   box-shadow: 0 17px 50px rgba(253, 29, 29, 0.9);
@@ -550,11 +497,9 @@ button#nextBtn { right: 18px; }
 body::-webkit-scrollbar {
   width: 12px;
 }
-
 body::-webkit-scrollbar-track {
   background: #f0eae3;
 }
-
 body::-webkit-scrollbar-thumb {
   background: #d81e5b;
   border-radius: 20px;
