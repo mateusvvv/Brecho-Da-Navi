@@ -1,3 +1,75 @@
+// Variável global para armazenar os produtos carregados
+let produtos = [
+  { id: 1, nome: 'Produto 1', imagem: 'produto1.jpg', preco: 99.90 },
+  { id: 2, nome: 'Produto 2', imagem: 'produto2.jpg', preco: 149.90 },
+  { id: 3, nome: 'Produto 3', imagem: 'produto3.jpg', preco: 79.90 }
+];
+
+// Função para exibir os produtos no container com classe '.produtos-grid'
+function exibirProdutos(produtos) {
+  const grid = document.querySelector('.produtos-grid');
+  if (!grid) {
+    console.error('Elemento .produtos-grid não encontrado.');
+    return;
+  }
+
+  grid.innerHTML = '';
+
+  produtos.forEach(produto => {
+    const card = document.createElement('div');
+    card.classList.add('produto-card');
+
+    card.innerHTML = `
+      <img src="produtos/${produto.imagem}" alt="${produto.nome}" />
+      <h3>${produto.nome}</h3>
+      <p>R$ ${produto.preco.toFixed(2)}</p>
+      <button onclick="adicionarAoCarrinho(${produto.id})">Adicionar ao carrinho</button>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+// Inicializa a exibição dos produtos ao carregar o script
+exibirProdutos(produtos);
+
+// Array para armazenar os itens do carrinho
+let carrinho = [];
+
+// Função para adicionar produto ao carrinho
+function adicionarAoCarrinho(idProduto) {
+  const produto = produtos.find(p => p.id === idProduto);
+  if (!produto) {
+    console.error('Produto não encontrado:', idProduto);
+    return;
+  }
+
+  carrinho.push(produto);
+  console.log('Produto adicionado:', produto.nome);
+  console.log('Carrinho:', carrinho);
+  atualizarCarrinho();
+}
+
+// Atualizar a interface do carrinho com os itens e valor total
+function atualizarCarrinho() {
+  const carrinhoItens = document.getElementById('carrinho-itens');
+  const totalElemento = document.getElementById('total');
+
+  carrinhoItens.innerHTML = '';
+
+  let total = 0;
+
+  carrinho.forEach(item => {
+    total += item.preco;
+    const itemDiv = document.createElement('div');
+    itemDiv.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+    carrinhoItens.appendChild(itemDiv);
+  });
+
+  totalElemento.innerHTML = `<strong>Total: R$ ${total.toFixed(2)}</strong>`;
+}
+
+// Função que responde perguntas do chatbot
 function getResponse() {
   const input = document.getElementById('userInput').value.toLowerCase();
   const response = document.getElementById('response');
@@ -28,6 +100,7 @@ function getResponse() {
   response.textContent = reply;
 }
 
+// Função para setar pergunta no input do chatbot por clique
 function setQuestion(question) {
   document.getElementById('userInput').value = question;
 }
