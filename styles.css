@@ -116,6 +116,7 @@ nav {
   border-radius: 8px;
   cursor: pointer;
   margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
 .produto-card button:hover {
@@ -243,4 +244,77 @@ footer {
     right: 5%;
     bottom: 10px;
   }
+}
+
+/* Carrossel */
+.carousel {
+  position: relative;
+  width: 320px;
+  margin: auto;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.carousel-slide {
+  min-width: 320px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px;
+}
+
+.carousel-slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+button#prevBtn,
+button#nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #d81e5b;
+  border: none;
+  color: white;
+  font-size: 28px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  z-index: 10;
+}
+
+button#prevBtn { left: 10px; }
+button#nextBtn { right: 10px; }
+
+.carousel-nav {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.nav-button {
+  border: none;
+  background-color: #ccc;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-button.current-slide,
+.nav-button:hover {
+  background-color: #d81e5b;
 }
