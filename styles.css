@@ -243,7 +243,6 @@ footer {
   flex-direction: column;
   transition: width 0.3s ease, max-width 0.3s ease;
 }
-
 #chatbot h3 {
   margin-bottom: 8px;
   color: #d81e5b;
@@ -252,7 +251,6 @@ footer {
   text-align: center;
   letter-spacing: 0.5px;
 }
-
 #chatbot input {
   width: 100%;
   padding: 7px 10px;
@@ -483,13 +481,11 @@ button#nextBtn { right: 18px; }
   user-select: none;
   margin-top: 20px;
 }
-
 .btn-instagram svg {
   width: 28px;
   height: 28px;
   fill: white;
 }
-
 .btn-instagram:hover,
 .btn-instagram:focus {
   box-shadow: 0 17px 50px rgba(253, 29, 29, 0.9);
@@ -501,11 +497,9 @@ button#nextBtn { right: 18px; }
 body::-webkit-scrollbar {
   width: 12px;
 }
-
 body::-webkit-scrollbar-track {
   background: #f0eae3;
 }
-
 body::-webkit-scrollbar-thumb {
   background: #d81e5b;
   border-radius: 20px;
