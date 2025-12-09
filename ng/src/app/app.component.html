@@ -1,0 +1,109 @@
+<!-- Header -->
+<header>
+  <div class="container header-content">
+    <h1>Brechó da Navi</h1>
+  </div>
+</header>
+
+<!-- Navegação -->
+<nav>
+  <div class="container nav-links">
+    <a href="#produtos">Produtos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </div>
+</nav>
+
+<!-- Conteúdo principal -->
+<main class="container">
+  <!-- Seção Hero -->
+  <section id="hero">
+    <img src="assets/imagem.png" alt="Logotipo do Brechó da Navi" class="logo" />
+    <p class="slogan">Moda sustentável e cheia de estilo</p>
+  </section>
+
+  <!-- Seção Produtos -->
+  <section id="produtos">
+    <h2>Produtos</h2>
+    <div class="carousel">
+      <button id="prevBtn" aria-label="Anterior" (click)="prev()">❮</button>
+      <div class="carousel-track-container">
+        <ul class="carousel-track" #track [style.transform]="trackTransform">
+          <li class="carousel-slide" *ngFor="let produto of produtos; let i = index" [class.current-slide]="currentIndex === i">
+            <img [src]="'assets/produtos/' + produto.imagem" [alt]="produto.nome">
+            <h3>{{ produto.nome }}</h3>
+            <p>R$ {{ produto.preco | number: '1.2-2' }}</p>
+            <button (click)="adicionarAoCarrinho(produto.id)">Adicionar ao carrinho</button>
+          </li>
+        </ul>
+      </div>
+      <button id="nextBtn" aria-label="Próximo" (click)="next()">❯</button>
+      <div class="carousel-nav" #nav>
+        <button class="nav-button" *ngFor="let produto of produtos; let i = index" [class.current-slide]="currentIndex === i" [attr.aria-label]="produto.nome" (click)="irPara(i)"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Carrinho -->
+  <section id="carrinho-container">
+    <h2>Carrinho de Compras</h2>
+    <div id="carrinho-itens">
+      <div *ngFor="let item of carrinho">{{ item.nome }} - R$ {{ item.preco | number:'1.2-2' }}</div>
+    </div>
+    <p id="total"><strong>Total: R$ {{ total | number:'1.2-2' }}</strong></p>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="sobre">
+    <h2>Sobre o Brechó</h2>
+    <p>
+      O Brechó da Navi oferece peças únicas, cuidadosamente selecionadas para pessoas que valorizam estilo e autenticidade.
+      Cada item do nosso acervo conta uma história, trazendo personalidade e charme para o seu guarda-roupa.
+      Priorizamos a moda sustentável, contribuindo para um consumo consciente e para a preservação do meio ambiente.
+      Nossas roupas e acessórios são escolhidos com atenção à qualidade, garantindo durabilidade e conforto.
+      Aqui, você encontra combinações exclusivas que destacam sua individualidade.
+      Nosso brechó promove a economia circular, dando uma segunda vida a peças que merecem continuar a brilhar.
+      Além de produtos incríveis, buscamos inspirar nossos clientes a fazer escolhas conscientes e cheias de estilo.
+      Cada visita ao Brechó da Navi é uma oportunidade de descobrir novidades e renovar seu visual de forma sustentável.
+      Valorizamos a diversidade e acreditamos que cada peça reflete a personalidade de quem a usa.
+      Venha conhecer nosso universo de moda responsável e transforme seu jeito de se vestir com consciência e criatividade.
+    </p>
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Email: <a href="mailto:contato&#64;brechodanavi.com">contato&#64;brechodanavi.com</a></p>
+    <a href="https://www.instagram.com/brechodanavii/" target="_blank" rel="noopener noreferrer" class="btn-instagram" aria-label="Instagram do Brechó da Navi">
+      Instagram
+    </a>
+  </section>
+</main>
+
+<!-- Botão flutuante do Chatbot -->
+<button id="chat-btn" aria-label="Abrir chat" (click)="abrirChat()">💬</button>
+
+<!-- Janela do Chatbot -->
+<div id="chat-window" [attr.aria-hidden]="!chatAberto" [style.display]="chatAberto ? 'flex' : 'none'">
+  <div id="chat-header">
+    <span>Chat Brechó da Navi</span>
+    <button id="close-btn" aria-label="Fechar chat" (click)="fecharChat()">✖</button>
+  </div>
+  <div id="chat-body">
+    <div class="message" *ngFor="let m of mensagens" [class.user-message]="m.tipo==='user'" [class.bot-message]="m.tipo==='bot'">{{ m.texto }}</div>
+  </div>
+  <div id="chat-footer">
+    <input type="text" id="chat-input" placeholder="Digite sua mensagem..." aria-label="Mensagem do chat" [(ngModel)]="entrada" (keypress)="onKeyPress($event)">
+    <button id="send-btn" (click)="enviar()">Enviar</button>
+  </div>
+  <div id="suggestions" style="margin-top:10px;">
+    <button *ngFor="let s of perguntas" (click)="usarSugestao(s)" style="margin:4px 2px;padding:6px 10px;font-size:0.85rem;cursor:pointer;border-radius:6px;border:1px solid #d81b60;background-color:#fff;color:#d81b60;">{{ s }}</button>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Brechó da Navi - Todos os direitos reservados</p>
+</footer>
+
+
