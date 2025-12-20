@@ -21,7 +21,7 @@ interface Mensagem {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
   // =========================
   // Produtos
   // =========================
@@ -30,37 +30,6 @@ export class AppComponent implements AfterViewInit {
     { id: 2, nome: 'Camiseta', imagem: 'produto2.jpg', preco: 149.90 },
     { id: 3, nome: 'Camisa De Manga Longa', imagem: 'produto3.jpg', preco: 79.90 }
   ];
-
-  // =========================
-  // Carrossel
-  // =========================
-  @ViewChild('track') trackRef!: ElementRef<HTMLUListElement>;
-  currentIndex = 0;
-  slideWidth = 0;
-
-  get trackTransform(): string {
-    return `translateX(-${this.slideWidth * this.currentIndex}px)`;
-  }
-
-  ngAfterViewInit(): void {
-    // calcular largura do slide após renderização
-    setTimeout(() => {
-      const firstSlide = this.trackRef?.nativeElement.children[0] as HTMLElement | undefined;
-      this.slideWidth = firstSlide?.getBoundingClientRect().width || 380; // fallback para CSS
-    }, 0);
-  }
-
-  next(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.produtos.length;
-  }
-
-  prev(): void {
-    this.currentIndex = (this.currentIndex - 1 + this.produtos.length) % this.produtos.length;
-  }
-
-  irPara(i: number): void {
-    this.currentIndex = i;
-  }
 
   // =========================
   // Carrinho
