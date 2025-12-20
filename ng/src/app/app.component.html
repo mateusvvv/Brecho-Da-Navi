@@ -10,9 +10,12 @@
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
     </nav>
-    <div class="cart-icon">
-      🛒 <span class="badge" *ngIf="carrinho.length > 0">{{ carrinho.length }}</span>
-    </div>
+    <div class="cart-container">
+      <div class="cart-icon" (click)="toggleCarrinho()">
+        🛒 <span class="badge" *ngIf="carrinho.length > 0">{{ carrinho.length }}</span>
+      </div>
+      <app-carrinho *ngIf="carrinhoAberto" [carrinho]="carrinho" [total]="total"></app-carrinho>
+      </div>
   </div>
   </header>
 
@@ -46,20 +49,6 @@
     </div>
   </section>
 
-  <!-- Seção Carrinho (Resumo) -->
-  <section id="carrinho-container" class="container section-padding" *ngIf="carrinho.length > 0">
-    <h2 class="section-title">Sua Sacola</h2>
-    <div class="cart-summary">
-      <div class="cart-item" *ngFor="let item of carrinho">
-        <span>{{ item.nome }}</span>
-        <span>R$ {{ item.preco | number:'1.2-2' }}</span>
-      </div>
-      <div class="cart-total">
-        <strong>Total: R$ {{ total | number:'1.2-2' }}</strong>
-      </div>
-      <button class="btn-checkout">Finalizar Compra</button>
-      </div>
-  </section>
 
   <!-- Seção Sobre -->
   <section id="sobre" class="section-gray section-padding">

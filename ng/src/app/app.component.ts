@@ -1,6 +1,8 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 interface Produto {
   id: number;
@@ -17,7 +19,7 @@ interface Mensagem {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, CarrinhoComponent, MatSnackBarModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -35,12 +37,25 @@ export class AppComponent {
   // Carrinho
   // =========================
   carrinho: Produto[] = [];
+  carrinhoAberto = false;
+
+  constructor(private snackBar: MatSnackBar) { }
+
+  toggleCarrinho() {
+    this.carrinhoAberto = !this.carrinhoAberto;
+  }
 
   adicionarAoCarrinho(idProduto: number): void {
     const produto = this.produtos.find(p => p.id === idProduto);
     if (!produto) return;
     this.carrinho.push(produto);
-    alert(`${produto.nome} adicionado ao carrinho!`);
+
+    this.snackBar.open(`${produto.nome} adicionado ao carrinho!`, 'Fechar', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      panelClass: ['snackbar-success']
+    });
   }
 
   get total(): number {

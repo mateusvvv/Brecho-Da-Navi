@@ -1,0 +1,27 @@
+<div class="cart-dialog-container">
+  <h2 class="dialog-title">Sacola</h2>
+
+  <div *ngIf="carrinho.length === 0" class="empty-cart">
+    <p>Sua sacola está vazia.</p>
+  </div>
+
+  <div *ngIf="carrinho.length > 0" class="cart-content">
+    <div class="cart-items-list">
+      <div class="cart-item" *ngFor="let item of carrinho">
+        <img [src]="'/assets/produtos/' + item.imagem" [alt]="item.nome" class="item-thumb">
+        <div class="item-details">
+          <h4 class="item-name">{{ item.nome }}</h4>
+          <p class="item-price">R$ {{ item.preco | number:'1.2-2' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="total-row">
+        <strong>Total:</strong>
+        <span class="total-price">R$ {{ total | number:'1.2-2' }}</span>
+      </div>
+      <button class="btn-checkout">Ir para o carrinho</button>
+    </div>
+  </div>
+</div>
