@@ -1,0 +1,127 @@
+<!-- Header Fixo -->
+<header>
+  <div class="container header-content">
+    <div class="logo-container">
+      <h1>Brechó da Navi</h1>
+      </div>
+    <nav>
+      <a href="#hero">Início</a>
+      <a href="#produtos">Loja</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="cart-container">
+      <div class="cart-icon" (click)="toggleCarrinho()">
+        🛒 <span class="badge" *ngIf="carrinho.length > 0">{{ carrinho.length }}</span>
+      </div>
+      <app-carrinho *ngIf="carrinhoAberto" [carrinho]="carrinho" [total]="total"></app-carrinho>
+      </div>
+  </div>
+  </header>
+
+<!-- Conteúdo principal -->
+<main>
+  <!-- Seção Hero -->
+  <section id="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <p class="slogan">Moda Circular & Estilo Único</p>
+        <h2>Encontre sua próxima peça favorita</h2>
+        <a href="#produtos" class="cta-button">Ver Coleção</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Produtos (Grid) -->
+  <section id="produtos" class="container section-padding">
+    <h2 class="section-title">Destaques da Coleção</h2>
+    <div class="produtos-grid">
+      <div class="produto-card" *ngFor="let produto of produtos">
+        <div class="img-container">
+          <img [src]="'assets/produtos/' + produto.imagem" [alt]="produto.nome">
+        </div>
+        <div class="card-body">
+          <h3>{{ produto.nome }}</h3>
+          <p class="price">R$ {{ produto.preco | number: '1.2-2' }}</p>
+          <button class="btn-buy" (click)="adicionarAoCarrinho(produto.id)">Adicionar à Sacola</button>
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Seção Sobre -->
+  <section id="sobre" class="section-gray section-padding">
+    <div class="container">
+      <h2 class="section-title">Nossa História</h2>
+      <div class="sobre-content">
+        <p>
+          O Brechó da Navi nasceu do amor pela moda e pela sustentabilidade. Acreditamos que cada peça tem uma história para
+          contar e merece uma segunda chance.
+          </p>
+        <p>
+          Nossa curadoria é feita com carinho, selecionando itens que unem qualidade, estilo e consciência ambiental. Ao comprar
+          conosco, você contribui para um ciclo de consumo mais responsável e autêntico.
+        </p>
+        </div>
+        </div>
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contato" class="container section-padding">
+    <h2 class="section-title">Fale Conosco</h2>
+    <div class="contact-cards">
+      <div class="card-contact">
+        <h3>Email</h3>
+        <p><a href="mailto:contato@brechodanavi.com">contato&#64;brechodanavi.com</a></p>
+      </div>
+      <div class="card-contact">
+        <h3>Redes Sociais</h3>
+        <a href="https://www.instagram.com/brechodanavii/" target="_blank" class="btn-instagram">
+          Siga no Instagram
+        </a>
+      </div>
+      </div>
+  </section>
+</main>
+
+<!-- Botão flutuante do Chatbot -->
+<button id="chat-btn" aria-label="Abrir chat" (click)="abrirChat()" [class.hide]="chatAberto">
+  <span class="icon">💬</span>
+  <span class="text">Ajuda?</span>
+</button>
+
+<!-- Janela do Chatbot -->
+<div id="chat-window" [class.open]="chatAberto">
+  <div id="chat-header">
+    <div class="header-info">
+      <span class="bot-avatar">🤖</span>
+      <span>Assistente Navi</span>
+    </div>
+    <button id="close-btn" aria-label="Fechar chat" (click)="fecharChat()">✖</button>
+  </div>
+  <div id="chat-body">
+    <div class="message bot-message">Olá! Como posso ajudar você hoje?</div>
+    <div class="message" *ngFor="let m of mensagens" [class.user-message]="m.tipo==='user'"
+      [class.bot-message]="m.tipo==='bot'">
+      {{ m.texto }}
+    </div>
+    </div>
+    <div id="suggestions">
+      <button *ngFor="let s of perguntas" (click)="usarSugestao(s)">{{ s }}</button>
+  </div>
+  <div id="chat-footer">
+    <input type="text" id="chat-input" placeholder="Digite sua mensagem..." [(ngModel)]="entrada"
+      (keypress)="onKeyPress($event)">
+    <button id="send-btn" (click)="enviar()">➤</button>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-content">
+    <p>&copy; 2025 Brechó da Navi. Moda com consciência.</p>
+  </div>
+</footer>
+
+
