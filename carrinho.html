@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="img/imagem-logo/imagem.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carrinho.css">
+
+    <title>Carrinho | Brechó da Navi</title>
+</head>
+
+<body>
+
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a id="whatsLink" target="_blank">VENDA AQUI SEUS DESAPEGOS!</a>
+    </div>
+
+    <!-- Header -->
+    <header class="container-cabecalho">
+        <div class="container-img">
+            <a href="index.html">
+                <img class="img-logo" src="img/imagem-logo/imagem.png" alt="Brechó da Navi">
+            </a>
+        </div>
+
+        <div class="lock-container">
+            <a class="a-lock" href="#">
+                <h3>Seus dados 100% seguros</h3>
+                <i class="fa-solid fa-lock"></i>
+            </a>
+        </div>
+
+        <!-- Modal LGPD -->
+        <div class="modal-lgpd" id="modal-lgpd">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>🔒 Proteção de Dados (LGPD)</h2>
+                <p>Suas informações são protegidas conforme a Lei nº 13.709/2018.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container-main">
+
+        <!-- Carrinho vazio -->
+        <div id="cart-empty" class="content">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h2>Seu carrinho está vazio</h2>
+            <p>Escolha seus favoritos no Brechó da Navi 💖</p>
+            <a href="index.html">Voltar aos produtos</a>
+        </div>
+
+        <!-- Carrinho com produtos -->
+        <div id="cart-content" class="carrinho-com-produtos">
+            <div id="cart-items" class="cart-items"></div>
+
+            <div class="cart-summary">
+                <p>Total: <strong id="cart-total">R$ 0,00</strong></p>
+                <button id="finish-order">
+                    Finalizar no WhatsApp
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="atendimento">
+            <h2>Atendimento</h2>
+            <div class="telefone">
+                <i class="fa-solid fa-phone"></i>
+                <a href="https://wa.me/553195295031" target="_blank">31 9529-5031</a>
+            </div>
+            <h3>brechodanavi@gmail.com</h3>
+            <h3>Seg–Sáb • 9h às 17h</h3>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/carrinho.js"></script>
+</body>
+</html>

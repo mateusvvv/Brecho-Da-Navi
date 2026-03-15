@@ -1,0 +1,116 @@
+#chat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgb(173, 74, 90);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
+  z-index: 1000;
+}
+
+#chat-btn:hover {
+  background-color: rgb(173, 74, 90);
+}
+
+#chat-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  height: 450px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  z-index: 999;
+}
+
+#chat-header {
+  background-color: rgb(173, 74, 90);
+  color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+#chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.message {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 15px;
+  word-wrap: break-word;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: rgb(173, 74, 90);
+  color: white;
+  border-bottom-right-radius: 0;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #f1f0f0;
+  color: #333;
+  border-bottom-left-radius: 0;
+}
+
+#chat-footer {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+#chat-footer input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+#chat-footer button {
+  background-color: rgb(173, 74, 90);
+  color: white;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#chat-footer button:hover {
+  background-color: rgb(173, 74, 90);
+}
+
+#close-btn {
+    border-radius: 10px;
+    width:20px;
+    height: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(173, 74, 90);
+}
+
+#close-btn:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,226 @@
+/* ================= CABEÇALHO ================= */
+
+.container-cabecalho {
+    border-bottom: 1px solid #fff;
+}
+
+.a-lock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    max-width: 60%;
+}
+
+.a-lock .fa-solid {
+    color: rgb(173, 74, 90);
+    font-size: 30px;
+}
+
+.a-lock h3 {
+    color: #f5f2ef;
+}
+
+/* ================= MODAL LGPD ================= */
+
+.modal-lgpd {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-lgpd.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #f5f2ef;
+    padding: 25px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* ================= MAIN ================= */
+
+.container-main {
+    background-color: #f5f2ef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-height: 60vh;
+}
+
+/* ================= CARRINHO ================= */
+
+.carrinho-com-produtos {
+    display: none;
+    width: 100%;
+    max-width: 1100px;
+    padding: 20px;
+}
+
+/* GRID DOS PRODUTOS */
+.cart-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+/* CARD DO PRODUTO */
+.cart-item {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* 🔥 IMAGEM MAIOR */
+.cart-item img {
+    width: 140px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* INFORMAÇÕES */
+.cart-item-info h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.cart-item-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* CONTROLES */
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.cart-controls span {
+    min-width: 20px;
+    font-weight: bold;
+}
+
+.cart-controls button {
+    padding: 6px 12px;
+    border: none;
+    background-color: rgb(173, 74, 90);
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cart-controls button:hover {
+    background-color: rgb(133, 58, 71);
+}
+
+/* ================= RESUMO ================= */
+
+.cart-summary {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.cart-summary p {
+    font-size: 18px;
+}
+
+.cart-summary button {
+    margin-top: 12px;
+    padding: 12px 22px;
+    background-color: rgb(173, 74, 90);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cart-summary button:hover {
+    background-color: rgb(133, 58, 71);
+}
+
+/* ================= CARRINHO VAZIO ================= */
+
+.content {
+    text-align: center;
+    padding: 80px 20px;
+    color: #666;
+}
+
+.content i {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: rgb(173, 74, 90);
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer .atendimento {
+    text-align: center;
+}
+
+.footer h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer .telefone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.footer .telefone i,
+.footer .telefone a {
+    color: rgb(133, 58, 71);
+}
+
+.footer h3 {
+    color: rgb(37, 36, 36);
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/imagem-logo/imagem.png" type="image/x-icon">
+
+    <!-- Font Awesome (versão estável) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+    <!-- CSS (ordem correta) -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carrossel.css">
+    <link rel="stylesheet" href="css/chatBox.css">
+    <link rel="stylesheet" href="css/destaques.css">
+    <link rel="stylesheet" href="css/produtos.css">
+
+    <title>Brechó da Navi</title>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a id="whatsLink"
+           href="https://wa.me/553195295031"
+           target="_blank">
+           VENDA AQUI SEUS DESAPEGOS!
+        </a>
+    </div>
+
+    <header class="container-cabecalho">
+
+        <div class="container-img">
+            <a href="./index.html">
+                <img class="img-logo" src="img/imagem-logo/imagem.png" alt="Logo Brechó da Navi">
+            </a>
+        </div>
+
+        <nav class="navigation-header">
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="carrinho">
+            <a id="carrinho-btn" href="carrinho.html" aria-label="Carrinho de compras">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+        </div>
+
+    </header> 
+
+    <!-- Carrossel -->
+    <main class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1" checked>
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5">
+
+            <div class="slide first">
+                <img src="img/imagens-carrossel/homem-jovem-em-camisa-escolher-roupas-em-shopping-ou-loja-roupa.jpg" alt="Brechó vintage">
+            </div>
+
+            <div class="slide">
+                <img src="img/imagens-carrossel/mulheres-olhando-para-roupas-de-perto.jpg" alt="Roupas em destaque">
+            </div>
+
+            <div class="slide">
+                <img src="img/imagens-carrossel/natureza-morta-de-saco-pendurado.jpg" alt="Moda sustentável">
+            </div>
+
+            <div class="slide">
+                <img src="img/imagens-carrossel/roupas-da-moda-em-cabides-no-show.jpg" alt="Roupas em cabides">
+            </div>
+
+            <div class="slide">
+                <img src="img/imagens-carrossel/vintageBrecho.jpg" alt="Brechó retrô">
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+                <div class="auto-btn5"></div>
+            </div>
+        </div>
+
+        <div class="manual-navigation">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+            <label for="radio5" class="manual-btn"></label>
+        </div>
+    </main>
+
+    <section class="infos-container">
+        <div class="infos-slider">
+            <div class="infos-track">
+                <div class="info">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <h3>Frete grátis acima de R$ 300</h3>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <h3>Entrega em todo o Brasil</h3>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-shirt"></i>
+                    <h3>Peças cuidadosamente selecionadas</h3>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <h3>Parcele em até 5x</h3>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-arrow-rotate-left"></i>
+                    <h3>Troca em até 7 dias</h3>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-calendar"></i>
+                    <h3>Atendimento de segunda a sábado</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destaques-section">
+        <h2>Destaques</h2>
+        <div class="destaques-wrapper">
+            <div class="destaques" id="destaques-container"></div>
+        </div>
+    </section>
+
+    <section id="produtos" class="produtos-section">
+        <h2>Produtos</h2>
+        <div class="produtos-wrapper">
+            <div class="produtos" id="container-produtos"></div>
+        </div>
+
+        <div id="toast" class="toast">
+            Produto adicionado ao carrinho 🛒
+        </div>
+    </section>
+
+    <!-- Botão flutuante do Chatbot -->
+    <button id="chat-btn" aria-label="Abrir chat">💬</button>
+
+    <!-- Janela do Chatbot -->
+    <div id="chat-window" aria-hidden="true">
+        <div id="chat-header">
+            <span>Chat Brechó da Navi</span>
+            <button id="close-btn" aria-label="Fechar chat">✖</button>
+        </div>
+        <div id="chat-body"></div>
+        <div id="chat-footer">
+            <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+            <button id="send-btn">Enviar</button>
+        </div>
+    </div>
+
+    <footer id="contato" class="footer-index">
+        <div class="atendimento-index">
+            <h2>Atendimento:</h2>
+
+            <div class="telefone-index">
+                <i class="fa-solid fa-phone"></i>
+                <a href="https://wa.me/553195295031" target="_blank">31 9529-5031</a>
+            </div>
+
+            <h3>brechodanavi@gmail.com</h3>
+            <h3>De segunda a sábado, das 9h às 17h</h3>
+        </div>
+
+        <div class="seguranca-index">
+            <div class="lock-container-index">
+                <a class="a-lock-index" href="javascript:void(0)">
+                    <h3>Seus dados 100% seguros</h3>
+                    <i class="fa-solid fa-lock"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/index.js" defer></script>
+    <script src="js/carrossel.js" defer></script>
+    <script src="js/chatBox.js" defer></script>
+    <script src="js/destaques.js" defer></script>
+    <script src="js/produtos.js" defer></script>
+
+</body>
+</html>
