@@ -155,3 +155,189 @@ h2, h3, p, a {
   opacity: 1;
   transform: translateY(0);
 }
+
+.depoimentos-section {
+    padding: 50px 20px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.depoimentos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.depoimento {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stars {
+    color: gold;
+}
+
+.depoimentos-section {
+    padding: 60px 20px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.depoimentos-section h2 {
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+.depoimentos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.depoimento {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    width: 260px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    position: relative;
+}
+
+.depoimento:hover {
+    transform: translateY(-8px);
+}
+
+.cliente-foto {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #ddd;
+}
+
+.depoimento p {
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.depoimento h4 {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.stars {
+    color: gold;
+    font-size: 18px;
+}
+
+/* ================= DEPOIMENTOS ================= */
+
+.depoimentos-section {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #f8f8f8, #ffffff);
+    text-align: center;
+}
+
+.depoimentos-section h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #222;
+    font-weight: 600;
+}
+
+/* CONTAINER */
+.depoimentos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* CARD */
+.depoimento {
+    background: #ffffff;
+    padding: 30px 20px 25px;
+    border-radius: 18px;
+    width: 270px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* BORDA SUPERIOR ESTILOSA */
+.depoimento::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(173, 74, 90), #ff9a9e);
+}
+
+/* HOVER */
+.depoimento:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* FOTO */
+.cliente-foto {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 4px solid #fff;
+    outline: 3px solid rgb(173, 74, 90);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* TEXTO */
+.depoimento p {
+    font-style: italic;
+    font-size: 15px;
+    color: #555;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+/* NOME */
+.depoimento h4 {
+    font-size: 16px;
+    color: rgb(173, 74, 90);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* ESTRELAS */
+.stars {
+    color: #FFD700;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 768px) {
+    .depoimentos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .depoimento {
+        width: 90%;
+        max-width: 330px;
+    }
+
+    
+}
