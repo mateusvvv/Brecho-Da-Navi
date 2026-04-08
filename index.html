@@ -7,18 +7,16 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/imagem-logo/imagem.png" type="image/x-icon">
 
-    <!-- Font Awesome (versão estável) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           crossorigin="anonymous"
           referrerpolicy="no-referrer">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
 
-    <!-- CSS (ordem correta) -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/carrossel.css">
@@ -28,16 +26,17 @@
 
     <title>Brechó da Navi</title>
 </head>
+
 <body>
 
+    <!-- TOP BAR -->
     <div class="top-bar">
-        <a id="whatsLink"
-           href="https://wa.me/553195295031"
-           target="_blank">
-           VENDA AQUI SEUS DESAPEGOS!
+        <a href="https://wa.me/553195295031" target="_blank">
+            VENDA AQUI SEUS DESAPEGOS!
         </a>
     </div>
 
+    <!-- HEADER -->
     <header class="container-cabecalho">
 
         <div class="container-img">
@@ -48,68 +47,46 @@
 
         <nav class="navigation-header">
             <a href="#produtos">Produtos</a>
-            <a href="#sobre">Sobre</a>
+            <a href="#depoimentos">Depoimentos</a>
             <a href="#contato">Contato</a>
         </nav>
 
         <div class="carrinho">
-            <a id="carrinho-btn" href="carrinho.html" aria-label="Carrinho de compras">
+            <a href="carrinho.html">
                 <i class="fa-solid fa-bag-shopping"></i>
             </a>
         </div>
 
-    </header> 
+    </header>
 
-    <!-- Carrossel -->
+    <!-- CARROSSEL -->
     <main class="slider">
         <div class="slides">
+
             <input type="radio" name="radio-btn" id="radio1" checked>
             <input type="radio" name="radio-btn" id="radio2">
             <input type="radio" name="radio-btn" id="radio3">
-            <input type="radio" name="radio-btn" id="radio4">
-            <input type="radio" name="radio-btn" id="radio5">
 
             <div class="slide first">
-                <img src="img/imagens-carrossel/homem-jovem-em-camisa-escolher-roupas-em-shopping-ou-loja-roupa.jpg" alt="Brechó vintage">
+                <img src="img/imagens-carrossel/vintageBrecho.jpg">
             </div>
 
             <div class="slide">
-                <img src="img/imagens-carrossel/mulheres-olhando-para-roupas-de-perto.jpg" alt="Roupas em destaque">
+                <img src="img/imagens-carrossel/mulheres-olhando-para-roupas-de-perto.jpg">
             </div>
 
             <div class="slide">
-                <img src="img/imagens-carrossel/natureza-morta-de-saco-pendurado.jpg" alt="Moda sustentável">
+                <img src="img/imagens-carrossel/roupas-da-moda-em-cabides-no-show.jpg">
             </div>
 
-            <div class="slide">
-                <img src="img/imagens-carrossel/roupas-da-moda-em-cabides-no-show.jpg" alt="Roupas em cabides">
-            </div>
-
-            <div class="slide">
-                <img src="img/imagens-carrossel/vintageBrecho.jpg" alt="Brechó retrô">
-            </div>
-
-            <div class="navigation-auto">
-                <div class="auto-btn1"></div>
-                <div class="auto-btn2"></div>
-                <div class="auto-btn3"></div>
-                <div class="auto-btn4"></div>
-                <div class="auto-btn5"></div>
-            </div>
-        </div>
-
-        <div class="manual-navigation">
-            <label for="radio1" class="manual-btn"></label>
-            <label for="radio2" class="manual-btn"></label>
-            <label for="radio3" class="manual-btn"></label>
-            <label for="radio4" class="manual-btn"></label>
-            <label for="radio5" class="manual-btn"></label>
         </div>
     </main>
 
+    <!-- INFOS -->
     <section class="infos-container">
         <div class="infos-slider">
             <div class="infos-track">
+
                 <div class="info">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <h3>Frete grátis acima de R$ 300</h3>
@@ -139,10 +116,12 @@
                     <i class="fa-solid fa-calendar"></i>
                     <h3>Atendimento de segunda a sábado</h3>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- DESTAQUES -->
     <section class="destaques-section">
         <h2>Destaques</h2>
         <div class="destaques-wrapper">
@@ -150,6 +129,7 @@
         </div>
     </section>
 
+    <!-- PRODUTOS -->
     <section id="produtos" class="produtos-section">
         <h2>Produtos</h2>
         <div class="produtos-wrapper">
@@ -161,22 +141,59 @@
         </div>
     </section>
 
-    <!-- Botão flutuante do Chatbot -->
-    <button id="chat-btn" aria-label="Abrir chat">💬</button>
+    <!-- ⭐ DEPOIMENTOS -->
+    <section id="depoimentos" class="depoimentos-section">
+        <h2>O que nossos clientes dizem 💚</h2>
 
-    <!-- Janela do Chatbot -->
-    <div id="chat-window" aria-hidden="true">
+        <div class="depoimentos-container">
+
+            <div class="depoimento">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="cliente-foto">
+                <p>"Comprei uma jaqueta incrível e parecia nova! Entrega rápida e atendimento top!"</p>
+                <h4>— Ana Clara, Recife</h4>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="depoimento">
+                <img src="https://randomuser.me/api/portraits/men/44.jpg" class="cliente-foto">
+                <p>"Nunca pensei que compraria em brechó online e fosse tão bom. Produtos de qualidade e preço justo!"</p>
+                <h4>— João Pedro, Caruaru</h4>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="depoimento">
+                <img src="https://randomuser.me/api/portraits/women/45.jpg" class="cliente-foto">
+                <p>"Amei minha compra! Veio tudo certinho e bem embalado. Já virei cliente fiel 😍"</p>
+                <h4>— Mariana Souza, Belo Jardim</h4>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="depoimento">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="cliente-foto">
+                <p>"Além de economizar, ainda ajudo o meio ambiente. Loja sensacional!"</p>
+                <h4>— Lucas Henrique, São Paulo</h4>
+                <div class="stars">★★★★★</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CHAT -->
+    <button id="chat-btn">💬</button>
+
+    <div id="chat-window">
         <div id="chat-header">
             <span>Chat Brechó da Navi</span>
-            <button id="close-btn" aria-label="Fechar chat">✖</button>
+            <button id="close-btn">✖</button>
         </div>
         <div id="chat-body"></div>
         <div id="chat-footer">
-            <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
-            <button id="send-btn">Enviar</button>
+            <input type="text" placeholder="Digite sua mensagem...">
+            <button>Enviar</button>
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer id="contato" class="footer-index">
         <div class="atendimento-index">
             <h2>Atendimento:</h2>
@@ -189,15 +206,6 @@
             <h3>brechodanavi@gmail.com</h3>
             <h3>De segunda a sábado, das 9h às 17h</h3>
         </div>
-
-        <div class="seguranca-index">
-            <div class="lock-container-index">
-                <a class="a-lock-index" href="javascript:void(0)">
-                    <h3>Seus dados 100% seguros</h3>
-                    <i class="fa-solid fa-lock"></i>
-                </a>
-            </div>
-        </div>
     </footer>
 
     <!-- JS -->
@@ -206,6 +214,7 @@
     <script src="js/chatBox.js" defer></script>
     <script src="js/destaques.js" defer></script>
     <script src="js/produtos.js" defer></script>
+   
 
 </body>
 </html>
